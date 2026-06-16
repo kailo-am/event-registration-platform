@@ -41,3 +41,10 @@ class RegisterForEventView(generics.CreateAPIView):
             {"detail": "You have successfully registered for the event."},
             status=status.HTTP_201_CREATED
         )
+    
+class MyRegistrationsView(generics.ListAPIView):
+    serializer_class = RegistrationSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return Registration.objects.filter(user=self.request.user)
