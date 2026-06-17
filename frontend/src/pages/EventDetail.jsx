@@ -13,7 +13,8 @@ function EventDetail() {
   const fetchEvent = async () => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/events/${id}/`
+        `https://event-registration-platform-5vxl.onrender.com/api/events/${id}/`
+        
       );
 
       setEvent(response.data);
@@ -27,7 +28,8 @@ function EventDetail() {
     const token = localStorage.getItem("access");
 
     await axios.post(
-      `http://127.0.0.1:8000/api/events/${id}/register/`,
+      `https://event-registration-platform-5vxl.onrender.com/api/events/${id}/register/`,
+      
       {},
       {
         headers: {

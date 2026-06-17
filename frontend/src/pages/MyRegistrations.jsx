@@ -13,7 +13,8 @@ function MyRegistrations() {
       const token = localStorage.getItem("access");
 
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/my-registrations/",
+        "https://event-registration-platform-5vxl.onrender.com/api/my-registrations/",
+       
         {
           headers: {
             Authorization: `Bearer ${token}`,

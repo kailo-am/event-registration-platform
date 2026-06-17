@@ -10,7 +10,8 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/login/",
+        "https://event-registration-platform-5vxl.onrender.com/api/login/",
+        
         {
           username,
           password,
