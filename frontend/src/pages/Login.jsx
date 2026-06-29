@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import API_URL from "../api";
 import { useState } from "react";
 import axios from "axios";
@@ -5,6 +6,7 @@ import axios from "axios";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,6 +24,7 @@ function Login() {
       localStorage.setItem("refresh", response.data.refresh);
 
       alert("Login Successful!");
+      navigate("/events");
     } catch (error) {
       alert("Login Failed");
       console.log(error);
