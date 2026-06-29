@@ -1,3 +1,4 @@
+import API_URL from "../api";
 import { useState } from "react";
 import axios from "axios";
 
@@ -10,8 +11,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "https://event-registration-platform-5vxl.onrender.com/api/login/",
-        
+        `${API_URL}/login/`,
         {
           username,
           password,

@@ -1,3 +1,4 @@
+import API_URL from "../api";
 import { useState } from "react";
 import axios from "axios";
 
@@ -11,8 +12,7 @@ function Register() {
 
     try {
       await axios.post(
-        "https://event-registration-platform-5vxl.onrender.com/api/register/",
-        
+        `${API_URL}/register/`,
         {
           username,
           email,

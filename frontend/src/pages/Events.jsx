@@ -1,3 +1,4 @@
+import API_URL from "../api";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -12,8 +13,7 @@ function Events() {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get(
-        "https://event-registration-platform-5vxl.onrender.com/api/events/",
+      const response = await axios.get(`${API_URL}/events/`
         
       );
 

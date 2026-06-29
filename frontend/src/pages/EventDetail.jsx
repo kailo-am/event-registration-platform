@@ -1,3 +1,4 @@
+import API_URL from "../api";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -12,8 +13,7 @@ function EventDetail() {
 
   const fetchEvent = async () => {
     try {
-      const response = await axios.get(
-        `https://event-registration-platform-5vxl.onrender.com/api/events/${id}/`
+      const response = await axios.get(`${API_URL}/events/${id}/`
         
       );
 
@@ -28,8 +28,7 @@ function EventDetail() {
     const token = localStorage.getItem("access");
 
     await axios.post(
-      `https://event-registration-platform-5vxl.onrender.com/api/events/${id}/register/`,
-      
+      `${API_URL}/events/${id}/register/`,
       {},
       {
         headers: {

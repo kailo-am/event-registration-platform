@@ -1,3 +1,4 @@
+import API_URL from "../api";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -13,7 +14,7 @@ function MyRegistrations() {
       const token = localStorage.getItem("access");
 
       const response = await axios.get(
-        "https://event-registration-platform-5vxl.onrender.com/api/my-registrations/",
+        `${API_URL}/my-registrations/`,
        
         {
           headers: {
