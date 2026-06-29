@@ -38,8 +38,20 @@ function EventDetail() {
     );
 
     alert("Registration Successful!");
-  } catch (error) {
-    alert("Already Registered or Error");
+  } 
+    catch (error) {
+        console.log(error);
+        console.log(error.response);
+
+        if (error.response) {
+            alert(error.response.data.detail || JSON.stringify(error.response.data));
+        } else {
+            alert("Network Error");
+        }
+
+
+
+
   }
 };
 
