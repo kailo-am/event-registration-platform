@@ -24,10 +24,16 @@ function Register() {
 
       alert("Registration Successful!");
       navigate("/login");
+
     } catch (error) {
-      alert("Registration Failed!");
-      console.log(error);
-    }
+  console.log(error.response);
+
+  if (error.response) {
+    alert(JSON.stringify(error.response.data));
+  } else {
+    alert("Network Error");
+  }
+}
   };
 
   return (
