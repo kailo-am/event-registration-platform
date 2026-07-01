@@ -6,6 +6,7 @@ import Register from "./pages/Register";
 import Events from "./pages/Events";
 import EventDetail from "./pages/EventDetail";
 import MyRegistrations from "./pages/MyRegistrations";
+import Layout from "./components/Layout";
 
 function App() {
   return (
